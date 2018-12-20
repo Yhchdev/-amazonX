@@ -16,7 +16,7 @@ function loadNews(){
 			for(var i =0;i<list.length;i++){
 				var news = list[i];
 				str += "<li>"+
-					      "<a href='readNews?nid='"+news.hn_id+"'>"+news.hn_title+"</a>"+
+					      "<a href='readNews?nid="+news.hn_id+"'>"+news.hn_title+"</a>"+
 					   "</li>";
 			}
 			var obj = $("#loadNews");

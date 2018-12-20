@@ -14,6 +14,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/function.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/index.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/news.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contentType}/scripts/category.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contentType}/scripts/product.js"></script>
 
 </head>
 <body>
@@ -57,7 +59,12 @@
 				</div>
 			</div>
 
+
+
+
 			<ul class="product2">
+
+				<div id="product">
 				<c:if test="${requestScope.pageModel.totalPage==0}">
 					<h4>找不到您搜索的商品！</h4>
 				</c:if>
@@ -77,13 +84,14 @@
 					</li>
 
 				</c:forEach>
+			</div>
 
 
 			</ul>
 
 			<!--分页-->
 			<div class="pager">
-				<ul>
+				<ul id="fpage">
 					<ul>
 						<li><a href="javascript:lastPage()" id="lastPage">上一页</a></li>
 						<c:forEach items="${requestScope.pageModel.pageList}" var="pl">

@@ -49,7 +49,6 @@ function register() {
         dataType:"json",
         success:function(data){
             if(data=='ok'){
-                alert('888')
                 window.location.href="login.jsp"
             }else{
                 alert("zhu ce shibai");

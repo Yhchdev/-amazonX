@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="${pageContext.request.contextPath}/scripts/adv.js" type="text/javascript"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/function.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/scripts/index.js"></script>
+	<script type="text/javascript" src="scripts/news.js"></script>
 
 </head>
 <body>
@@ -29,11 +30,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<%@ include file="index_news.jsp" %>
 	</div>
 	<div id="news" class="right-main">
-		<c:set var="news" value="${requestScope.newsInfo }"></c:set>
-		<h1>标题：${news.hnTitle }</h1>
+		<c:set var="news" value="${requestScope.NewInfo }"></c:set>
+		<h1>标题：${news.hn_title }</h1>
 		<div class="content">
-			<p style="text-align: right;">创建时间：${news.hnCreateTime }</p>
-			内容：${news.hnContent }			
+			<p style="text-align: right;">创建时间：${news.hn_create_time }</p>
+			内容：${news.hn_content }
 		</div>
 	</div>
 	<div class="clear"></div>

@@ -35,4 +35,32 @@ public class NewsDao {
 		}
 		return list;
 	}
+
+    public News newsDetails(int nid){
+        News news = new News();
+        Connection con = DBUtil.getConnection();
+        String sql = "select * from hwua_news where hn_id = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,nid);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            news.setHn_id(rs.getLong("hn_id"));
+            news.setHn_title(rs.getString("hn_title"));
+            news.setHn_content(rs.getString("hn_content"));
+            news.setHn_create_time(rs.getString("hn_create_time"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            DBUtil.close(con);
+        }
+        return news;
+    }
+    public static void main(String arg[]){
+	    NewsDao newsDao = new NewsDao();
+	    News news = newsDao.newsDetails(2);
+	    System.out.println(news);
+    }
 }
+

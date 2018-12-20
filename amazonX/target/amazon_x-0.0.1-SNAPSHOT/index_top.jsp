@@ -14,7 +14,7 @@
 				<c:choose>
 					<c:when test="${user!=null }">
 						<li><a href="#" class="c_red">${user.hu_user_name }</a>&nbsp;&nbsp;&nbsp;</li>
-						<li><a href="quit">退出</a>&nbsp;&nbsp;&nbsp;</li>
+						<li><a href="Logout">注销</a>&nbsp;&nbsp;&nbsp;</li>
 						<li><a href="register.jsp">请注册</a></li>
 					</c:when>
 
